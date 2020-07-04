@@ -1,0 +1,30 @@
+server:
+  port: 9091
+spring:
+  profiles:
+    active: @profileActive@
+  application:
+    name: service-gateway
+  cloud:
+    gateway:
+      enabled: true
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: service-base
+          uri: lb://SERVICE-BASE
+          predicates:
+            - Path=/service-base/**
+          filters:
+            - SwaggerHeaderFilter
+            - StripPrefix=1
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    # 服务注册
+    register-with-eureka: true
+    # 服务发现
+    fetch-registry: true
