@@ -20,6 +20,13 @@ spring:
           filters:
             - SwaggerHeaderFilter
             - StripPrefix=1
+        - id: service-auth
+          uri: lb://SERVICE-AUTH
+          predicates:
+            - Path=/service-auth/**
+          filters:
+            - SwaggerHeaderFilter
+            - StripPrefix=1
 eureka:
   instance:
     prefer-ip-address: true
