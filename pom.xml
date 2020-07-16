@@ -17,6 +17,7 @@
         <dependency>
             <groupId>com.scottxuan.basic</groupId>
             <artifactId>basic-web</artifactId>
+            <version>${basic-web.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
