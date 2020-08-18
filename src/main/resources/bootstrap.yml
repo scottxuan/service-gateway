@@ -28,9 +28,9 @@ spring:
             - SwaggerHeaderFilter
             - StripPrefix=1
         - id: service-user
-          uri: lb://SERVICE-USER
+          uri: lb://SERVICE-SYSTEM
           predicates:
-            - Path=/service-user/**
+            - Path=/service-system/**
           filters:
             - SwaggerHeaderFilter
             - StripPrefix=1
