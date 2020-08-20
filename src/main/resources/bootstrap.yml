@@ -1,5 +1,5 @@
 server:
-  port: 9091
+  port: 9200
 spring:
   profiles:
     active: @profileActive@
@@ -27,7 +27,7 @@ spring:
           filters:
             - SwaggerHeaderFilter
             - StripPrefix=1
-        - id: service-user
+        - id: service-system
           uri: lb://SERVICE-SYSTEM
           predicates:
             - Path=/service-system/**
